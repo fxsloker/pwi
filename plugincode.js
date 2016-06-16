@@ -102,8 +102,17 @@ $('[name="proceedToCheckout"]').click(function(){
     var cartcontent=$('#activeCartViewForm > div.sc-list-body > div > div.sc-list-item-content > div.a-row.a-spacing-base.a-spacing-top-base > div.a-column.a-span8 > div > div > div.a-fixed-left-grid-col.a-col-right > ul > li:nth-child(1) > span > a > span').text();
     //alert(cartcontent);
     
-    var pwiserverurl = 'http://manatki.net/tools/pwi.php?orderid='+base64_encode(dataforpwi)+'&cartcontent='+base64_encode(goods);
-    var leaddata = $.ajax({type: "GET", url: pwiserverurl, async: false}).responseText;
+   /* var pwiserverurl = 'http://manatki.net/tools/pwi.php?orderid='+base64_encode(dataforpwi)+'&cartcontent='+base64_encode(goods);*/
+    /*var leaddata = $.ajax({type: "GET", url: pwiserverurl, async: false}).responseText;*/
+
+    chrome.runtime.sendMessage({
+        method: 'POST',
+        action: 'xhttp',
+        url: 'http://manatki.net/tools/pwi.php?orderid='+base64_encode(dataforpwi)+'&'+'cartcontent='+base64_encode(goods),
+    }, function(responseText) {
+        alert(responseText);
+        /*Callback function to deal with the response*/
+    });    
     //$.get( pwiserverurl );
     //alert('sending to pwi server:'+dataforpwi);   
    }

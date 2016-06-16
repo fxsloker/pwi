@@ -6,7 +6,8 @@
     "storage",
     "tabs",
     "activeTab",
-    "http://manatki.net/*"
+    "http://manatki.net/*",
+    "https://*/*"
   ],
   "browser_action": {
     "default_title": "let's do it",
