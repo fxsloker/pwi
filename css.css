@@ -1,0 +1,31 @@
+.button-main {
+  text-align: center;
+  width:70px;
+}
+
+.btn-lead {
+  background: #ffffff none repeat scroll 0 0;
+  border: 2px solid #dfdfdf;
+  border-radius: 5px;
+  color: #d31a1a;
+  cursor: pointer;
+  font-family: "Roboto",sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0px 0;
+  padding: 5px 5px;
+  transition: all 1s ease 0s;
+}
+.btn-lead.btn-danger {
+  background: #d31a1a none repeat scroll 0 0;
+  color: #ffffff;
+}
+
+.btn-lead.btn-danger:hover {
+  background: #fff none repeat scroll 0 0;
+  color: #d31a1a;
+}
+
+
+.btn-lead.btn-default:hover {  background: #d31a1a none repeat scroll 0 0;
+  color: #ffffff;}

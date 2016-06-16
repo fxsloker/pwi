@@ -1,0 +1,33 @@
+{
+  "name": "PWI amazon",
+  "description": "PWI foundation chrome extension",
+  "version": "0.1",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "http://manatki.net/*"
+  ],
+  "browser_action": {
+    "default_title": "let's do it",
+     "default_icon": {             
+            "19": "images/icon_128.png"
+     }
+  },
+  "background": {
+    "scripts": ["background.js","jquery.js","jquery.xpath.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.amazon.com/*"],
+      "js": ["jquery.js","plugincode.js","jquery.xpath.js"],
+      "css": ["css.css"]
+    }
+  ],
+  "web_accessible_resources": ["onpage.js","images/loading.gif"],
+  "icons": { 
+          "128": "images/icon_128.png" },
+  "manifest_version": 2
+}
+ 
